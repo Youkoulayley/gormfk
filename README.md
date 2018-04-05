@@ -7,7 +7,7 @@ Some things needs to be done to be perfectly compatible with gorm ; like using a
 
 # Installation
 ```bash
-go get -u github.com/youkoulayle/gormfk
+go get -u github.com/youkoulayley/gormfk
 ```
 
 # How to use it
@@ -28,8 +28,8 @@ import (
 
 ...
 
-bootstrap.Db().AutoMigrate(&models.Role{})
-bootstrap.Db().AutoMigrate(&models.User{})
+Db().AutoMigrate(&models.Role{})
+Db().AutoMigrate(&models.User{})
 
 gormfk.BelongsToFIndex(bootstrap.Db(), &models.User{}, &models.Role{})
 ```
@@ -44,8 +44,8 @@ import (
 
 ...
 
-bootstrap.Db().AutoMigrate(&models.User{})
-bootstrap.Db().AutoMigrate(&models.Channel{})
+Db().AutoMigrate(&models.User{})
+Db().AutoMigrate(&models.Channel{})
 
 gormfk.Many2ManyFIndex(bootstrap.Db(), &models.Channel{}, &models.User{})
 ```
