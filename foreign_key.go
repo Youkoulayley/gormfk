@@ -1,4 +1,4 @@
-package foreignKey
+package gormfk
 
 import (
 	"fmt"
