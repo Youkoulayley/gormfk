@@ -5,6 +5,11 @@ This package can. Basically, but it can do it.
 
 Some things needs to be done to be perfectly compatible with gorm ; like using an another column name for the foreign key etc.
 
+# Installation
+```bash
+go get -u github.com/youkoulayle/gormfk
+```
+
 # How to use it
 You can define a new foreign key for this kind of relation : 
 
@@ -16,7 +21,7 @@ Some will be coming in the future.
 ## Belongs To
 After the automigrate functions, you can do this :
 
-```	
+```go
 import (
     'github.com/youkoulayley/gormfk'
 )
@@ -32,7 +37,7 @@ gormfk.BelongsToFIndex(bootstrap.Db(), &models.User{}, &models.Role{})
 ## Many To Many
 After the automigrate functions, you can do this :
 
-```
+```go
 import (
     'github.com/youkoulayley/gormfk'
 )
