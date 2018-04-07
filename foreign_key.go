@@ -8,8 +8,8 @@ import (
 	"github.com/jinzhu/inflection"
 )
 
-// BelongsToFIndex create the foreign key for a belongs to relation
-func BelongsToFIndex(db *gorm.DB, parentModel interface{}, childModel interface{}) {
+// BelongsTo create the foreign key for a belongs to relation
+func BelongsTo(db *gorm.DB, parentModel interface{}, childModel interface{}) {
 	// Get name of the model
 	tableParentAccessor := ReduceModelToName(parentModel)
 	tableChildAccessor := ReduceModelToName(childModel)
@@ -21,8 +21,8 @@ func BelongsToFIndex(db *gorm.DB, parentModel interface{}, childModel interface{
 	db.Table(tableParentName).AddForeignKey(tableChildAccessor+"_id", tableChildName+"(id)", "CASCADE", "CASCADE")
 }
 
-// Many2ManyFIndex create the index for many to many relations
-func Many2ManyFIndex(db *gorm.DB, parentModel interface{}, childModel interface{}) {
+// Many2Many create the index for many to many relations
+func Many2Many(db *gorm.DB, parentModel interface{}, childModel interface{}) {
 	// Get name of the model
 	tableParentAccessor := ReduceModelToName(parentModel)
 	tableChildAccessor := ReduceModelToName(childModel)

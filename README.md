@@ -31,7 +31,7 @@ import (
 Db().AutoMigrate(&models.Role{})
 Db().AutoMigrate(&models.User{})
 
-gormfk.BelongsToFIndex(bootstrap.Db(), &models.User{}, &models.Role{})
+gormfk.BelongsTo(bootstrap.Db(), &models.User{}, &models.Role{})
 ```
 
 ## Many To Many
@@ -47,5 +47,5 @@ import (
 Db().AutoMigrate(&models.User{})
 Db().AutoMigrate(&models.Channel{})
 
-gormfk.Many2ManyFIndex(bootstrap.Db(), &models.Channel{}, &models.User{})
+gormfk.Many2Many(bootstrap.Db(), &models.Channel{}, &models.User{})
 ```
